@@ -26,7 +26,7 @@ For this module's final project, you have the choice of four problems:
 - Image Classification with Deep Learning
 - Natural Language Processing
 
-For each problem, we have provided a dataset. You may use a dataset of your own choosing with your instructor's approval.
+For each problem, we have provided a dataset. 
 
 Like Project \#3, the focus here is on *prediction*. It will be up to you to determine how best to evaluate your model, but for any of these projects your goal is to build something that **works**.
 
@@ -111,64 +111,60 @@ There are many approaches to NLP problems - start with something simple and iter
 
 Evaluating multiclass classifiers can be trickier than binary classifiers because there are multiple ways to mis-classify an observation, and some errors are more problematic than others. Use the business problem that your NLP project sets out to solve to inform your choice of evaluation metrics.
 
-## The Deliverables
+## DELIVERABLES
 
-For online students, your completed project should contain the following four deliverables:
+1. A public GitHub repository.
 
-1. A **_Jupyter Notebook_** containing any code you've written for this project. This work will need to be pushed to a public GitHub repository dedicated for this project.
-
-2. An organized **README.md** file in the GitHub repository that describes the contents of the repository. This file should be the source of information for navigating through the repository.
-
-3. A **_[Blog Post](https://github.com/learn-co-curriculum/dsc-welcome-blogging-v2-1)_**.
-
-4. An **_"Executive Summary" PowerPoint Presentation_** that gives a brief overview of your problem/dataset, and each step of the data science process.
-
-Note: On-campus students may have different deliverables, please speak with your instructor.
-
-### Jupyter Notebook Must-Haves
-
-For this project, your Jupyter Notebook should meet the following specifications:
-
-**_Organization/Code Cleanliness_**
-
-* The notebook should be well organized, easy to follow, and code is commented where appropriate.  
-    * Level Up: The notebook contains well-formatted, professional looking markdown cells explaining any substantial code. All functions have docstrings that act as professional-quality documentation.  
-* The notebook is written to technical audiences with a way to both understand your approach and reproduce your results. The target audience for this deliverable is other data scientists looking to validate your findings.  
-
-**_Process, Methodology, and Findings_**
-
-* Your notebook should contain a clear record of your process and methodology for exploring and preprocessing your data, building and tuning a model, and interpreting your results.
-* We recommend you use the OSEMN process to help organize your thoughts and stay on track.
+2. An `environment.yml` file that contains all the necessary packages needed to recreate your conda environment.
+3. A standalone `src/` directory that stores all relevant source code.
+    - All functions have docstrings that act as [professional-quality documentation](http://google.github.io/styleguide/pyguide.html#381-docstrings). 
+    - If applicable, [well documented](https://www.sqlstyle.guide/) SQL queries with appropriate single-line or multiline comments.
+    - Quality classification model
+       - Whenever necessary, briefly explain in comments the changes made from one iteration to the next, and why you made these choices
 
 
-### Visualizations
+4. A standalone `data/` directory that stores all relevant raw and processed data files.
+    - **Be sure to include how the data was obtained!**
+    - All large files are labeled in the `.gitignore` file to avoid having them accidentally live in your commit history.
+    
 
-As usual, the best way to present findings is often visually, and the tips and reminders below should apply to any of these projects.
+5. A standalone `references/` directory that stores all relevant literature, data dictionaries, or useful references that were used to help you during the project.
+    - Use this directory to store physical copies of the `.pdf` files; or
+    - Create a `README.md` file that cites external resources that were used.
+    
+    
+6. A standalone `reports/` directory that stores your `presentation.pdf` files
 
-But please pay special attention to this section if choosing Project \#1 because time series analysis is an area of data science that lends itself well to intuitive data visualizations. Whereas we may not be able to visualize the best choice in a classification or clustering problem with a high-dimensional dataset, that isn't an issue with time series data. As such, **_any findings worth mentioning in this problem are probably also worth visualizing_**.
 
-Your notebook should make use of data visualizations as appropriate to make your findings obvious to any readers. And, when it comes to moving images out of notebooks, make an effort to *export* them rather than taking screen shots. Note e.g. `matplotlib.pyplot.savefig()`, an in-built exportation tool. See [here](https://medium.com/analytics-vidhya/export-images-from-jupyter-notebook-with-a-single-command-422db2b66e92) for more sophisticated possibilities.
+7. A standalone `notebooks/` directory that stores both your exploratory and report notebooks
+    - A record of your workflow should be stored in `notebooks/exploratory`. Don't be afraid to leave in error messages, so you know what didn't work!
 
-Remember that if a visualization is worth creating, then it's also worth taking the extra few minutes to make sure that it is easily understandable and well-formatted. When creating visualizations, make sure that they have:
 
-* A title
-* Clearly labeled X and Y axes, with appropriate scale for each
-* A legend, when necessary
-* No overlapping text that makes it hard to read
-* An intelligent use of color -- multiple lines should have different colors and/or symbols to make them easily differentiable to the eye
-* An appropriate amount of information -- avoid creating graphs that are "too busy". For instance, don't create a line graph with 25 different lines on it.
+8. A user-focused `README.md` file that briefly covers your process, methodology and findings.
+    - Someone with no context on your project should be able to use this document to understand the structure of your project, and adapt your code for their needs.
+    - Implied above is a schema which diagramming the route to important files.
 
-<center><img src='images/bad-graph-1.png' height=100% width=100%>
-There's just too much going on in this graph for it to be readable -- don't make the same mistake! (<a href='http://genywealth.com/wp-content/uploads/2010/03/line-graph.php_.png'>Source</a>)</center>
 
-### Blog Post Must-Haves
+9. One final Jupyter Notebook file stored in `notebooks/report` that focuses on visualization and presentation
+    - The very beginning of the notebook contains a description of the purpose of the notebook.
+       - This is helpful for your future self and anyone of your colleagues that needs to view your notebook. Without this context, you’re implicitly asking your peers to invest a lot of energy to help solve your problem. Help them to jump into your project by providing them the purpose of this Jupyter Notebook.
+    - Explanation of the data sources and where one can retrieve them
+       - Whenever possible, link to the corresponding data dictionary
+    - Custom functions and classes are imported from Python modules and are not created directly in the notebook. As soon as you have a working function in one of your exploratory notebooks, copy it over to `src` so it is reusable.
+    - At least 4 meaningful data visualizations, with corresponding interpretations. All visualizations are well labeled with axes labels, a title, and a legend (when appropriate)
+    - Take the time to make sure that you craft your story well, and clearly explain your process and findings in a way that clearly shows both your technical expertise and your ability to communicate your results!
 
-Refer back to the [Blogging Guidelines](https://github.com/learn-co-curriculum/dsc-welcome-blogging-v2-1) for the technical requirements and blog ideas.
 
-## The Process
-
-These steps are informed by Smart Vision's<sup>1</sup> description of the CRISP-DM process.
-
+10. An "Executive Summary" Keynote/PowerPoint/Google Slide presentation (delivered as a PDF export) that explains what you have found.
+    - Make sure to also add and commit this file as presentation.pdf of your non-technical presentation to your repository with a file name of `reports/presentation.pdf`.
+    - Contain between 5-10 professional quality slides detailing:
+       - A high-level overview of your methodology
+       - The results you’ve uncovered
+       - Any real-world recommendations you would like to make based on your findings (ask yourself--why should the executive team care about what you found? How can your findings help the company/stakeholder?)
+       - Avoid technical jargon and explain results in a clear, actionable way for non-technical audiences.
+    - The slides should use visualizations whenever possible, and avoid walls of text
+    - All visualizations included in this presentation should also be exported as image files (e.g. with `plt.savefig`, not by taking a screenshot) and saved under `reports/figures/`
+   - All visualizations included in this presentation should also be exported as image files (e.g. with `plt.savefig`, not by taking a screenshot) and saved under `reports/figures/`
 ### 1. Business Understanding
 
 Start by reading this document, and making sure that you understand the kinds of questions being asked.  In order to narrow your focus, you will likely want to make some design choices about your specific audience, rather than attempting to address all potentially-relevant concerns. Think about what kinds of predictions you want to be able to make, and about which kinds of wrong predictions are most concerning.
@@ -213,9 +209,7 @@ In this case, your "deployment" comes in the form of the deliverables listed abo
  - "How confident are you in the predictive quality of the results?"
  - "What are some of the things that could cause the results to be wrong?"
 
-## Grading Rubric
 
-Online students can find a PDF of the grading rubric for the project [here](TODO). _Note: On-campus students may have different requirements, please speak with your instructor._
 
 ## Citation
 
